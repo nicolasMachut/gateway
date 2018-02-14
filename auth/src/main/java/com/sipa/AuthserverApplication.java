@@ -26,6 +26,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -38,6 +39,12 @@ import java.security.Principal;
 @SessionAttributes("authorizationRequest")
 @EnableResourceServer
 public class AuthserverApplication extends WebMvcConfigurerAdapter {
+
+	@Bean
+	public RestTemplate restTemplate () {
+		return new RestTemplate();
+	}
+
 
 	@RequestMapping("/user")
 	@ResponseBody
@@ -60,12 +67,12 @@ public class AuthserverApplication extends WebMvcConfigurerAdapter {
 	protected static class LoginConfig extends WebSecurityConfigurerAdapter {
 
 		private final AuthenticationManager authenticationManager;
-		//private final CustomUserDetailsService customUserDetailsService;
+		private final CustomUserDetailsService customUserDetailsService;
 
 		@Autowired
-		public LoginConfig(AuthenticationManager authenticationManager/*, CustomUserDetailsService customUserDetailsService*/) {
+		public LoginConfig(AuthenticationManager authenticationManager, CustomUserDetailsService customUserDetailsService) {
 			this.authenticationManager = authenticationManager;
-			//this.customUserDetailsService = customUserDetailsService;
+			this.customUserDetailsService = customUserDetailsService;
 		}
 
 		@Override
@@ -75,9 +82,9 @@ public class AuthserverApplication extends WebMvcConfigurerAdapter {
 					.and()
 					.requestMatchers().antMatchers("/login", "/logout", "/oauth/authorize", "/oauth/confirm_access")
 					.and()
-					.authorizeRequests().anyRequest().authenticated();
-					/*.and()
-					.userDetailsService(customUserDetailsService);*/
+					.authorizeRequests().anyRequest().authenticated()
+					.and()
+					.userDetailsService(customUserDetailsService);
 		}
 
 		@Override
@@ -112,14 +119,15 @@ public class AuthserverApplication extends WebMvcConfigurerAdapter {
 		@Override
 		public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 			//clients.jdbc(dataSource());
-			clients.inMemory().withClient("acme").secret("acmesecret")
+			clients.inMemory().withClient("vpn").secret("vpn")
 					.authorizedGrantTypes("authorization_code", "refresh_token","password")
+					.autoApprove(true)
 					.scopes("openid");
 		}
 
 
 
-		@Bean
+		/*@Bean
 		public DataSource dataSource() {
 			DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
@@ -128,7 +136,7 @@ public class AuthserverApplication extends WebMvcConfigurerAdapter {
 			dataSource.setUsername(env.getProperty("jdbc.user"));
 			dataSource.setPassword(env.getProperty("jdbc.pass"));
 			return dataSource;
-		}
+		}*/
 
 		@Override
 		public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {

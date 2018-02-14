@@ -12,8 +12,8 @@ security:
     client:
       accessTokenUri: http://localhost:9999/uaa/oauth/token
       userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
-      clientId: acme
-      clientSecret: acmesecret
+      clientId: vpn
+      clientSecret: vpn
     resource:
       jwt:
         keyValue: |
@@ -28,6 +28,9 @@ zuul:
     user:
       path: /user/**
       url: http://localhost:9999/uaa/user
+    userTest:
+      path: /userTest/**
+      url: http://localhost:8787/userTest
 
 logging:
   level:

@@ -12,6 +12,9 @@
         <module name="demo (2)" />
         <module name="gateway" />
         <module name="gateway (1)" />
+        <module name="test-microservice" />
+        <module name="test-microservice (1)" />
+        <module name="user-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +24,9 @@
       <module name="demo (2)" target="1.8" />
       <module name="gateway" target="1.8" />
       <module name="gateway (1)" target="1.8" />
+      <module name="test-microservice" target="1.8" />
+      <module name="test-microservice (1)" target="1.8" />
+      <module name="user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
