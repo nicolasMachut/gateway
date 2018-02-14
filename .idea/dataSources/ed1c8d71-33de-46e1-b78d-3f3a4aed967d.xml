@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="auth@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="auth">
+      <ObjectId>119693</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12401</ObjectId>
+    </database>
+    <database id="4" parent="1" name="eurotax">
+      <ObjectId>16395</ObjectId>
+    </database>
+    <database id="5" parent="1" name="lime">
+      <ObjectId>20989</ObjectId>
+    </database>
+    <database id="6" parent="1" name="pomelos">
+      <ObjectId>111370</ObjectId>
+    </database>
+    <schema id="7" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-02-14.17:53:22.550</IntrospectionTimestamp>
+      <IntrospectionStateNumber>51143815</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="8" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+    </schema>
+    <table id="13" parent="7" name="clientdetails">
+      <ObjectId>119768</ObjectId>
+      <StateNumber>51143804</StateNumber>
+    </table>
+    <table id="14" parent="7" name="oauth_access_token">
+      <ObjectId>119734</ObjectId>
+      <StateNumber>51143798</StateNumber>
+    </table>
+    <table id="15" parent="7" name="oauth_approvals">
+      <ObjectId>119762</ObjectId>
+      <StateNumber>51143803</StateNumber>
+    </table>
+    <table id="16" parent="7" name="oauth_client_details">
+      <ObjectId>119785</ObjectId>
+      <StateNumber>51143815</StateNumber>
+    </table>
+    <table id="17" parent="7" name="oauth_client_token">
+      <ObjectId>119726</ObjectId>
+      <StateNumber>51143797</StateNumber>
+    </table>
+    <table id="18" parent="7" name="oauth_code">
+      <ObjectId>119756</ObjectId>
+      <StateNumber>51143802</StateNumber>
+    </table>
+    <table id="19" parent="7" name="oauth_refresh_token">
+      <ObjectId>119742</ObjectId>
+      <StateNumber>51143799</StateNumber>
+    </table>
+    <column id="20" parent="13" name="appid">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="21" parent="13" name="resourceids">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="22" parent="13" name="appsecret">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="23" parent="13" name="scope">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="24" parent="13" name="granttypes">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="25" parent="13" name="redirecturl">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="26" parent="13" name="authorities">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="27" parent="13" name="access_token_validity">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="28" parent="13" name="refresh_token_validity">
+      <Position>9</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="29" parent="13" name="additionalinformation">
+      <Position>10</Position>
+      <DataType>varchar(4096)|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <column id="30" parent="13" name="autoapprovescopes">
+      <Position>11</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143804</StateNumber>
+    </column>
+    <index id="31" parent="13" name="clientdetails_pkey">
+      <ObjectId>119774</ObjectId>
+      <ColNames>appid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="13" name="clientdetails_pkey">
+      <ObjectId>119775</ObjectId>
+      <ColNames>appid</ColNames>
+      <UnderlyingIndexName>clientdetails_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="14" name="token_id">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143798</StateNumber>
+    </column>
+    <column id="34" parent="14" name="token">
+      <Position>2</Position>
+      <DataType>bytea|0</DataType>
+      <StateNumber>51143798</StateNumber>
+    </column>
+    <column id="35" parent="14" name="authentication_id">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>51143798</StateNumber>
+    </column>
+    <column id="36" parent="14" name="user_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143798</StateNumber>
+    </column>
+    <column id="37" parent="14" name="client_id">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143798</StateNumber>
+    </column>
+    <column id="38" parent="14" name="authentication">
+      <Position>6</Position>
+      <DataType>bytea|0</DataType>
+      <StateNumber>51143798</StateNumber>
+    </column>
+    <column id="39" parent="14" name="refresh_token">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143798</StateNumber>
+    </column>
+    <index id="40" parent="14" name="oauth_access_token_pkey">
+      <ObjectId>119740</ObjectId>
+      <ColNames>authentication_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="14" name="oauth_access_token_pkey">
+      <ObjectId>119741</ObjectId>
+      <ColNames>authentication_id</ColNames>
+      <UnderlyingIndexName>oauth_access_token_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="15" name="userid">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143803</StateNumber>
+    </column>
+    <column id="43" parent="15" name="clientid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143803</StateNumber>
+    </column>
+    <column id="44" parent="15" name="scope">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143803</StateNumber>
+    </column>
+    <column id="45" parent="15" name="status">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <StateNumber>51143803</StateNumber>
+    </column>
+    <column id="46" parent="15" name="expiresat">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>51143803</StateNumber>
+    </column>
+    <column id="47" parent="15" name="lastmodifiedat">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>51143803</StateNumber>
+    </column>
+    <column id="48" parent="16" name="client_id">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="49" parent="16" name="resource_ids">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="50" parent="16" name="client_secret">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="51" parent="16" name="scope">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="52" parent="16" name="authorized_grant_types">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="53" parent="16" name="web_server_redirect_uri">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="54" parent="16" name="authorities">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="55" parent="16" name="access_token_validity">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="56" parent="16" name="refresh_token_validity">
+      <Position>9</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="57" parent="16" name="additional_information">
+      <Position>10</Position>
+      <DataType>varchar(4096)|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <column id="58" parent="16" name="autoapprove">
+      <Position>11</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143815</StateNumber>
+    </column>
+    <index id="59" parent="16" name="oauth_client_details_pkey">
+      <ObjectId>119791</ObjectId>
+      <ColNames>client_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="60" parent="16" name="oauth_client_details_pkey">
+      <ObjectId>119792</ObjectId>
+      <ColNames>client_id</ColNames>
+      <UnderlyingIndexName>oauth_client_details_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="17" name="token_id">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143797</StateNumber>
+    </column>
+    <column id="62" parent="17" name="token">
+      <Position>2</Position>
+      <DataType>bytea|0</DataType>
+      <StateNumber>51143797</StateNumber>
+    </column>
+    <column id="63" parent="17" name="authentication_id">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>51143797</StateNumber>
+    </column>
+    <column id="64" parent="17" name="user_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143797</StateNumber>
+    </column>
+    <column id="65" parent="17" name="client_id">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143797</StateNumber>
+    </column>
+    <index id="66" parent="17" name="oauth_client_token_pkey">
+      <ObjectId>119732</ObjectId>
+      <ColNames>authentication_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="67" parent="17" name="oauth_client_token_pkey">
+      <ObjectId>119733</ObjectId>
+      <ColNames>authentication_id</ColNames>
+      <UnderlyingIndexName>oauth_client_token_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="68" parent="18" name="code">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143802</StateNumber>
+    </column>
+    <column id="69" parent="18" name="authentication">
+      <Position>2</Position>
+      <DataType>bytea|0</DataType>
+      <StateNumber>51143802</StateNumber>
+    </column>
+    <column id="70" parent="19" name="token_id">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>51143799</StateNumber>
+    </column>
+    <column id="71" parent="19" name="token">
+      <Position>2</Position>
+      <DataType>bytea|0</DataType>
+      <StateNumber>51143799</StateNumber>
+    </column>
+    <column id="72" parent="19" name="authentication">
+      <Position>3</Position>
+      <DataType>bytea|0</DataType>
+      <StateNumber>51143799</StateNumber>
+    </column>
+  </database-model>
+</dataSource>
