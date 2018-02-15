@@ -6,7 +6,8 @@ import lombok.Data;
 public class UserDto {
 
     private Long personId;
-    private Long workspaceId;
+    private WorkspaceDto workspace;
+    private EntityDto entity;
     private String login;
     private String password;
     private String mail;

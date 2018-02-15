@@ -7,31 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity(name = "users")
+@Entity(name = "workspace")
 @Data
-public class User {
+public class Workspace {
 
     @Id
     private Long id;
 
     @ManyToOne
-    private Workspace workspace;
-
-    @ManyToOne
     private com.sipa.domain.Entity entity;
 
     @Column
-    private String login;
+    private String name;
 
     @Column
-    private String password;
-
-    @Column
-    private String mail;
-
-    @Column
-    private Integer role;
-
-    @Column
-    private Boolean active;
+    private byte[] actions;
 }

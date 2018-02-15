@@ -14,12 +14,15 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 import org.springframework.stereotype.Controller;
@@ -110,7 +113,7 @@ public class AuthserverApplication extends WebMvcConfigurerAdapter {
 
 		@Bean
 		public JwtAccessTokenConverter jwtAccessTokenConverter() {
-			JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+			JwtAccessTokenConverter converter = new FooJwtAccessTokenConverter();
 			KeyPair keyPair = new KeyStoreKeyFactory(new ClassPathResource("keystore.jks"), "foobar".toCharArray()).getKeyPair("test");
 			converter.setKeyPair(keyPair);
 			return converter;
@@ -124,8 +127,6 @@ public class AuthserverApplication extends WebMvcConfigurerAdapter {
 					.autoApprove(true)
 					.scopes("openid");
 		}
-
-
 
 		/*@Bean
 		public DataSource dataSource() {

@@ -2,6 +2,8 @@ spring:
   aop:
     proxy-target-class: true
 
+server:
+  port: 9595
 
 security:
   user:
@@ -10,8 +12,8 @@ security:
   - "*.bundle.*"
   oauth2:
     client:
-      accessTokenUri: http://localhost:9999/uaa/oauth/token
-      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+      accessTokenUri: http://192.168.7.74:9999/uaa/oauth/token
+      userAuthorizationUri: http://192.168.7.74:9999/uaa/oauth/authorize
       clientId: vpn
       clientSecret: vpn
     resource:
@@ -31,6 +33,12 @@ zuul:
     userTest:
       path: /userTest/**
       url: http://localhost:8787/userTest
+    docs:
+        path: /pomelos_docs/**
+        url: http://192.168.7.73:80/pomelos_docs
+    doc_test:
+      path: /doc_test/**
+      url: http://localhost:9000
 
 logging:
   level:
