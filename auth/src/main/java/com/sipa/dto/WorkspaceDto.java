@@ -1,4 +1,4 @@
-package com.sipa;
+package com.sipa.dto;
 
 import lombok.Data;
 

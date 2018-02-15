@@ -12,7 +12,7 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 @SpringBootApplication
 @EnableZuulProxy
 @EnableOAuth2Sso
-public class GatewayApplication extends WebSecurityConfigurerAdapter{
+public class GatewayApplication extends WebSecurityConfigurerAdapter {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GatewayApplication.class, args);

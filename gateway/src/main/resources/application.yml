@@ -12,10 +12,10 @@ security:
   - "*.bundle.*"
   oauth2:
     client:
-      accessTokenUri: http://192.168.7.74:9999/uaa/oauth/token
-      userAuthorizationUri: http://192.168.7.74:9999/uaa/oauth/authorize
-      clientId: vpn
-      clientSecret: vpn
+      accessTokenUri: http://localhost:9999/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+      clientId: fooClientIdPassword
+      clientSecret: secret
     resource:
       jwt:
         keyValue: |
@@ -38,7 +38,7 @@ zuul:
         url: http://192.168.7.73:80/pomelos_docs
     doc_test:
       path: /doc_test/**
-      url: http://localhost:9000
+      url: http://localhost:9000/doc_test/**
 
 logging:
   level:

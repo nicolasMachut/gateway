@@ -1,5 +1,6 @@
 package com.sipa;
 
+import com.sipa.dto.UserDto;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
