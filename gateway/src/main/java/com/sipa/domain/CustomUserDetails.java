@@ -1,5 +1,7 @@
-package com.sipa;
+package com.sipa.domain;
 
+import com.sipa.dto.UserDto;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -7,10 +9,9 @@ import java.util.Collection;
 
 public class CustomUserDetails implements UserDetails {
 
+    private UserDto userDto;
 
-    private final UserDto userDto;
-
-    public CustomUserDetails (UserDto userDto) {
+    public CustomUserDetails(UserDto userDto) {
         this.userDto = userDto;
     }
 
