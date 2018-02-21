@@ -4,33 +4,31 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
-@Entity(name = "users")
+@Entity(name="co_user")
 @Data
-public class User {
+public class UserValue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    private Workspace workspace;
+    private WorkspaceValue workspace;
 
     @ManyToOne
-    private com.sipa.domain.Entity entity;
+    @NotNull
+    private EntityValue entity;
 
     @Column
+    @NotNull
     private String login;
 
     @Column
     private String password;
 
     @Column
+    @NotNull
     private String mail;
-
-    @Column
-    private Integer role;
-
-    @Column
-    private Boolean active;
 }

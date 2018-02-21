@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: user-service
   jpa:
     database: POSTGRESQL
     show-sql: true
@@ -17,3 +19,11 @@ server:
 security:
   basic:
     enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
