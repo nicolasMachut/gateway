@@ -1,5 +1,6 @@
 package com.sipa.service;
 
+import com.sipa.UserServiceException;
 import com.sipa.domain.EntityValue;
 import com.sipa.domain.UserValue;
 import com.sipa.domain.WorkspaceValue;
@@ -22,7 +23,7 @@ public class UserService {
         return userRepository.findByLogin(login);
     }
 
-    public void createDefaultAdminUser(EntityValue entity) {
+    public void createDefaultAdminUser(EntityValue entity) throws UserServiceException {
         UserValue userValue = new UserValue();
         userValue.setEntity(entity);
         userValue.setLogin(entity.getName());
@@ -35,7 +36,12 @@ public class UserService {
         this.createUser(userValue);
     }
 
-    public UserValue createUser (UserValue userValue) {
+    public UserValue createUser (UserValue userValue) throws UserServiceException {
+
+        if (userRepository.findByLogin(userValue.getLogin()) != null) {
+            throw new UserServiceException("Login " + userValue.getLogin() + " déjà utilisé");
+        }
+
         return this.userRepository.save(userValue);
     }
 }

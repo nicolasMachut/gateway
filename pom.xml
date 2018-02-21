@@ -47,6 +47,10 @@
 		<module>gateway</module>
 		<module>discovery</module>
 		<module>user-service</module>
+		<module>siv</module>
+		<module>autovista</module>
+		<module>pouey</module>
+		<module>cartegie</module>
 	</modules>
 
 </project>

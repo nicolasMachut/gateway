@@ -1,6 +1,8 @@
 package com.sipa.rest;
 
+import com.sipa.UserServiceException;
 import com.sipa.domain.UserValue;
+import com.sipa.domain.WorkspaceValue;
 import com.sipa.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,9 +30,11 @@ public class UserResource {
     }
 
     @PostMapping
-    public ResponseEntity<UserValue> createUser(@RequestBody @Valid UserValue userValue) {
-        // TODO : set workspace
+    public ResponseEntity<UserValue> createUser(@RequestBody @Valid UserValue userValue) throws UserServiceException {
         userValue.setPassword(bCryptPasswordEncoder.encode("password"));
+        WorkspaceValue workspaceValue = new WorkspaceValue();
+        workspaceValue.setId(1L);
+        userValue.setWorkspace(workspaceValue);
         UserValue createdUser =  userService.createUser(userValue);
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }

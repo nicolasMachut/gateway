@@ -1,5 +1,6 @@
 package com.sipa.rest;
 
+import com.sipa.UserServiceException;
 import com.sipa.domain.EntityValue;
 import com.sipa.service.EntityService;
 import com.sipa.service.UserService;
@@ -25,11 +26,11 @@ public class EntityResource {
     }
 
     @PostMapping()
-    public ResponseEntity<EntityValue> createEntity (@RequestBody @Valid EntityValue entity) {
+    public ResponseEntity<EntityValue> createEntity (@RequestBody @Valid EntityValue entity) throws UserServiceException {
         entity.setParentId(1L);
         EntityValue createdEntity = entityService.createEntity(entity);
 
-        // TODO ; call services to setup new entity (doc david ?)
+        // TODO : call services to setup new entity (doc david ?)
 
         userService.createDefaultAdminUser(createdEntity);
         return new ResponseEntity<>(createdEntity, HttpStatus.CREATED);
