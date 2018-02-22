@@ -6,7 +6,7 @@
 	<groupId>com.sipa</groupId>
 	<artifactId>archi-sipa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>archi-sipa</name>
 	<description>Pock Architecture "microservice"</description>
@@ -51,6 +51,7 @@
 		<module>autovista</module>
 		<module>pouey</module>
 		<module>cartegie</module>
+		<module>configServer</module>
 	</modules>
 
 </project>

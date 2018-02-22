@@ -1,24 +1,6 @@
-server:
-  port: 9595
-
 spring:
   application:
     name: gateway
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
-
-zuul:
-  routes:
-    user-service:
-      path: /user-service/**
-      serviceId: user-service
-
-logging:
-  level:
-    org.springframework.security: DEBUG
+  cloud:
+    config:
+      uri: http://localhost:8888

@@ -14,4 +14,4 @@ INSERT INTO co_workspace (name) VALUES
   ('Comptabilité');
 
 INSERT INTO co_user (workspace_id, entity_id, login, password, mail) VALUES
-  (1, 2, 'nmachut', 'password', 'nmachut@mail.fr');
+  (1, 2, 'nmachut', '$2a$10$7yK9yPM4/e4P26MabUiwuOwOufOakBM43D.B8zEktw3Hdk2s1H1k.', 'nmachut@mail.fr');

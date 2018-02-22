@@ -27,7 +27,7 @@ public class UserService {
         UserValue userValue = new UserValue();
         userValue.setEntity(entity);
         userValue.setLogin(entity.getName());
-        userValue.setPassword(bCryptPasswordEncoder.encode("admin"));
+        userValue.setPassword(bCryptPasswordEncoder.encode("vpn"));
         userValue.setMail("admin@admin.fr");
 
         WorkspaceValue workspaceValue = new WorkspaceValue();

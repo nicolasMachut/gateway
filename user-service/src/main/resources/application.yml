@@ -1,29 +1,6 @@
 spring:
   application:
     name: user-service
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-    hibernate:
-      ddl-auto: create-drop
-  datasource:
-    platform: postgres
-    url: jdbc:postgresql://localhost:5432/users
-    username: vpn
-    password: vpn
-    driverClassName: org.postgresql.Driver
-
-server:
-  port: 8787
-
-security:
-  basic:
-    enabled: false
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
+  cloud:
+    config:
+      uri: http://localhost:8888
